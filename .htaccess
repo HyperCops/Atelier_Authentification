@@ -1,4 +1,4 @@
 AuthName "Accès protégé"
 AuthType Basic
-AuthUserFile /chemin/absolu/au/.htpasswd
+AuthUserFile /home/doudoudidledou/www/.htpasswd
 Require valid-user
