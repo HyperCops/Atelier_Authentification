@@ -9,7 +9,7 @@ if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === 'bin2hex(random_by
     header('Location: page_admin.php');
     exit();
 
-if (isset($_COOKIE['authToken_user']) && $_COOKIE['authToken'] === 'bin2hex(random_bytes(16))') {
+if (isset($_COOKIE['authToken_user']) && $_COOKIE['authToken_user'] === 'bin2hex(random_bytes(16))') {
     header('Location: page_user.php');
     exit();
 }
