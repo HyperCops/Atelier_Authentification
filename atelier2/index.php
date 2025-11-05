@@ -8,6 +8,10 @@ session_start();
 if (isset($_COOKIE['authToken']) && $_COOKIE['authToken'] === 'bin2hex(random_bytes(16))') {
     header('Location: page_admin.php');
     exit();
+
+if (isset($_COOKIE['authToken_user']) && $_COOKIE['authToken'] === 'bin2hex(random_bytes(16))') {
+    header('Location: page_user.php');
+    exit();
 }
 
 // Gérer la soumission du formulaire
@@ -26,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
       if ($username === 'utilisateur' && $password === 'utilisateur') {
-        setcookie('authToken', 'bin2hex(random_bytes(16))', time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 heure (3600 secondes) 
+        setcookie('authToken_user', 'bin2hex(random_bytes(16))', time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 heure (3600 secondes) 
         header('Location: page_user.php'); // L'utilisateur est dirigé vers la page home.php
         exit();
     } else {
